@@ -1,10 +1,6 @@
 import type { BigNumber } from "@ethersproject/bignumber";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
-import {
-  // ArrowSmDownIcon,
-  // ArrowSmUpIcon,
-  ChevronDownIcon,
-} from "@heroicons/react/24/solid";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { usePrice } from "~/context/priceContext";
 import { useBlockExplorer } from "~/hooks/useBlockExplorer";
 import type { Token } from "~/types";
@@ -13,10 +9,7 @@ import {
   formatBigNumberInput,
   formatUsd,
   formatUsdLong,
-  // formatPercent
 } from "~/utils/number";
-// import { getPrice24hChange } from "~/utils/price";
-// import { TimeIntervalLineGraph } from "./Graph";
 import { TokenLogo } from "./TokenLogo";
 
 type Props = {
@@ -28,7 +21,6 @@ type Props = {
   locked?: boolean;
   onChange: (value: string) => void;
   onTokenClick: () => void;
-  // showPriceGraph: boolean;
 };
 
 export default function PairTokenInput({
@@ -43,7 +35,6 @@ export default function PairTokenInput({
 }: Props) {
   const { magicUsd } = usePrice();
   const blockExplorer = useBlockExplorer();
-  // const price24hChange = getPrice24hChange(token);
   // const positive = price24hChange >= 0;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -133,49 +124,8 @@ export default function PairTokenInput({
               <p className="whitespace-nowrap text-xs font-normal text-night-300 sm:text-lg">
                 {formatUsdLong(token.priceMagic * magicUsd)} USD
               </p>
-              {/* <p
-                className={twMerge(
-                  "flex items-baseline text-[0.5rem] font-semibold sm:ml-1 sm:text-xs",
-                  {
-                    "text-ruby-900": !positive,
-                    "text-green-600": positive,
-                  }
-                )}
-              >
-                {positive ? (
-                  <ArrowSmUpIcon
-                    className="h-3 w-3 flex-shrink-0 self-center text-green-500 sm:h-4 sm:w-4"
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <ArrowSmDownIcon
-                    className="h-3 w-3 flex-shrink-0 self-center text-ruby-500 sm:h-4 sm:w-4"
-                    aria-hidden="true"
-                  />
-                )}
-                <span className="sr-only">
-                  {positive ? "Increased by" : "Decreased by"}
-                </span>
-                {formatPercent(price24hChange)}
-              </p> */}
             </div>
           </div>
-          {/* {showPriceGraph ? (
-            <>
-              <div className="h-24 2xl:h-36">
-                <TimeIntervalLineGraph
-                  gradient={{
-                    from: positive ? "#96e4df" : "#ee9617",
-                    to: positive ? "#21d190" : "#fe5858",
-                  }}
-                  data={token.price1wUsdIntervals}
-                />
-              </div>
-              <p className="text-xs font-light text-night-500">
-                VOL {formatUsd(token.volume1wMagic)}
-              </p>
-            </>
-          ) : null} */}
         </div>
       </div>
     </div>

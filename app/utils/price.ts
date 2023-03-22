@@ -1,5 +1,3 @@
-import type { AdvancedToken } from "~/types";
-
 export const LIQUIDITY_PROVIDER_FEE = 0.0225;
 export const COMMUNITY_GAME_FUND = 0.00375;
 export const COMMUNITY_ECO_FUND = 0.00375;
@@ -23,20 +21,6 @@ export const getTokenCount = (
   tokenReserve: number,
   lpTotalSupply: number
 ) => (lpTotalSupply > 0 ? (lpCount / lpTotalSupply) * tokenReserve : 0);
-
-export const getPrice24hChange = ({
-  priceUsd,
-  price1wUsdIntervals,
-}: AdvancedToken) => {
-  if (price1wUsdIntervals.length <= 1) {
-    return 0;
-  }
-
-  const priceYesterdayUsd = price1wUsdIntervals[1].value;
-  return parseFloat(
-    ((priceUsd - priceYesterdayUsd) / priceYesterdayUsd).toFixed(4)
-  );
-};
 
 export const fetchMagicPrice = async (): Promise<{
   magicUsd: number;
