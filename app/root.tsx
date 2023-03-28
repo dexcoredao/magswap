@@ -214,6 +214,7 @@ export default function App() {
               accentColor: "#DC2626",
               borderRadius: "large",
             })}
+            modalSize="compact"
           >
             <UserProvider>
               <PriceProvider>
@@ -273,7 +274,7 @@ export default function App() {
                     <div className="relative m-auto mb-24 flex min-h-[calc(100vh-64px)] flex-col p-8 pt-0 sm:pt-8 xl:max-w-6xl 2xl:max-w-7xl">
                       <Outlet />
                     </div>
-                    <header className="fixed left-0 right-0 bottom-[4.5rem] z-10 px-2 sm:bottom-24">
+                    <header className="fixed bottom-[4.5rem] left-0 right-0 z-10 px-2 sm:bottom-24">
                       <div className="relative">
                         <div className="absolute left-1/2 z-10 w-full max-w-lg -translate-x-1/2 transform rounded-xl bg-night-800/40 p-2 shadow-2xl shadow-night-800/30 backdrop-blur-md 2xl:max-w-2xl">
                           <nav className="flex gap-1">
