@@ -80,9 +80,18 @@ export const LineGraph = ({
 }) => {
   return (
     <AutoSizer>
-      {({ width, height }) => (
-        <Graph width={width} height={height} data={data} gradient={gradient} />
-      )}
+      {({ width, height }) =>
+        width && height ? (
+          <Graph
+            width={width}
+            height={height}
+            data={data}
+            gradient={gradient}
+          />
+        ) : (
+          <></>
+        )
+      }
     </AutoSizer>
   );
 };
