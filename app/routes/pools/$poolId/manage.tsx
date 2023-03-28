@@ -83,7 +83,7 @@ export default function Manage() {
                   isActive
                     ? "border-ruby-500 bg-night-500/20 text-white"
                     : "border-transparent text-night-500 hover:border-night-300 hover:text-night-700",
-                  "flex-1 whitespace-nowrap border-t-2 py-3 px-4 text-center text-xs font-medium sm:flex-none sm:py-4 sm:px-8 sm:text-left sm:text-sm"
+                  "flex-1 whitespace-nowrap border-t-2 px-4 py-3 text-center text-xs font-medium sm:flex-none sm:px-8 sm:py-4 sm:text-left sm:text-sm"
                 )}
                 aria-current={isActive ? "page" : undefined}
               >

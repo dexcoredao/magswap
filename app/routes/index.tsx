@@ -412,7 +412,7 @@ const ConfirmSwapModal = ({
         >
           Confirm Swap
         </Dialog.Title>
-        <div className="mt-4 mb-4 flex flex-col items-center">
+        <div className="mb-4 mt-4 flex flex-col items-center">
           <div className="flex w-full justify-between rounded-md bg-night-900 p-4">
             <span className="truncate text-lg font-medium tracking-wide">
               {isExactOut
